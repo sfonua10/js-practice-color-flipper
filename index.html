@@ -29,9 +29,11 @@
 
         #text-container {
             width: fit-content;
-            background-color: black;
+            background-color: #222;
             color: white;
             padding: 0 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2.5rem;
         }
         section {
             display: flex;
@@ -44,6 +46,22 @@
         }
         button {
             margin-top: 1rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+            background: transparent;
+            transition: all 0.7s linear;
+        }
+        button:hover {
+            background-color: #222;
+            color: white;
+        }
+        #injectText {
+            color: #49A6E9;
         }
     </style>
 </head>
@@ -64,9 +82,8 @@
         <section>
             <div id="text-container">
                 <h1>Background Color: <span id="injectText"></span></h1>
-
             </div>
-            <button onclick="changeBGColor()">CLICK ME</button>
+            <button onclick="changeBGColor()">Click Me</button>
         </section>
     </main>
 
