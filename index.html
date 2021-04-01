@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <style>
+        nav {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid black;
+        }
+        li {
+            list-style-type: none;
+            margin: 1rem;
+        }
+        #color-flipper {
+            align-self: center;
+        }
+        #links {
+            display: flex
+        }
+
+        main {
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <h4 id="color-flipper">Color Flipper</h4>
+        <ul id="links">
+            <li>
+                <h4>Simple</h4>
+            </li>
+            <li>
+                <h4>Hex</h4>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Background Color: Red</h1>
+        <button onclick="changeBGColor()">CLICK ME</button>
+    </main>
+
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max)
+        }
+        const colors = ['green', 'red', 'yellow', 'blue', 'pink', 'orange', 'gray', 'purple', 'white']
+        function changeBGColor() {
+            document.querySelector('main').style.backgroundColor = colors[getRandomInt(colors.length)];
+        }
+    </script>
+</body>
+
+</html>
