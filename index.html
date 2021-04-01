@@ -23,7 +23,27 @@
         }
 
         main {
+            position: relative;
             height: 100vh;
+        }
+
+        #text-container {
+            width: fit-content;
+            background-color: black;
+            color: white;
+            padding: 0 1rem;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            margin: auto;
+            height: 20px; /*requires explicit height*/
+        }
+        button {
+            margin-top: 1rem;
         }
     </style>
 </head>
@@ -41,17 +61,25 @@
         </ul>
     </nav>
     <main>
-        <h1>Background Color: Red</h1>
-        <button onclick="changeBGColor()">CLICK ME</button>
+        <section>
+            <div id="text-container">
+                <h1>Background Color: <span id="injectText"></span></h1>
+
+            </div>
+            <button onclick="changeBGColor()">CLICK ME</button>
+        </section>
     </main>
 
     <script>
+        const colors = ['green', 'red', 'yellow', 'blue', 'pink', 'orange', 'gray', 'purple', 'white']
         function getRandomInt(max) {
             return Math.floor(Math.random() * max)
         }
-        const colors = ['green', 'red', 'yellow', 'blue', 'pink', 'orange', 'gray', 'purple', 'white']
+
         function changeBGColor() {
-            document.querySelector('main').style.backgroundColor = colors[getRandomInt(colors.length)];
+            let randomColor = colors[getRandomInt(colors.length)];
+            document.querySelector('main').style.backgroundColor = randomColor;
+            document.querySelector('#injectText').innerHTML = randomColor;
         }
     </script>
 </body>
