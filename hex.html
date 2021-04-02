@@ -41,7 +41,7 @@
         main {
             position: relative;
             height: calc(100vh - 50px);
-            background-color: tomato;
+            background-color: #1ea850;
         }
 
         #text-container {
@@ -100,7 +100,7 @@
         <h4 id="color-flipper">Color Flipper</h4>
         <ul id="links">
             <li>
-                <h4><a href="/index.html">Simple</a></h4>
+                <h4><a a href="/index.html">Simple</a></h4>
             </li>
             <li>
                 <h4><a href="/hex.html">Hex</a></h4>
@@ -110,14 +110,14 @@
     <main>
         <section>
             <div id="text-container">
-                <h1>Background Color: <span id="injectText">tomato</span></h1>
+                <h1>Background Color: <span id="injectText">#1ea850</span></h1>
             </div>
             <button onclick="changeBGColor()">Click Me</button>
         </section>
     </main>
 
     <script>
-        const colors = ['green', 'red', 'yellow', 'blue', 'pink', 'orange', 'gray', 'purple', 'white', 'silver', 'navy', 'teal', 'fuchsia']
+        const colors = ['#df1674', '#e3d230', '#72ca44', '#1ea850', '#7f1f8c', '#9acd32', '#ffeb3b', '#6364ab', '#d7d7d7', '#91f4d4', '#d5a4ff', '#ff8fc2']
         function getRandomInt(max) {
             return Math.floor(Math.random() * max)
         }
