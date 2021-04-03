@@ -1,6 +1,6 @@
 # Color Flipper
 
-Color Flipper is a page that allows users to view a single random color at a time by clicking a button.
+Color Flipper is a page that allows users to view a single random color at a time by clicking a button. View site here: https://js-practice-color-flipper.netlify.app/
 
 ## Installation
 
