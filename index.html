@@ -17,7 +17,7 @@
         nav {
             display: flex;
             justify-content: space-evenly;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         li {
@@ -34,6 +34,7 @@
             display: flex;
             cursor: pointer;
         }
+
         li:hover {
             color: #49A6E9;
         }
@@ -89,7 +90,8 @@
         #injectText {
             color: #49A6E9;
         }
-        a{
+
+        a {
             color: inherit;
         }
     </style>
@@ -112,12 +114,21 @@
             <div id="text-container">
                 <h1>Background Color: <span id="injectText">tomato</span></h1>
             </div>
+            <div>
+                <input type="checkbox" id="sound" name="sound" checked />
+                <label for="sound">Sound</label>
+            </div>
             <button onclick="changeBGColor()">Click Me</button>
         </section>
     </main>
 
     <script>
         const colors = ['green', 'red', 'yellow', 'blue', 'pink', 'orange', 'gray', 'purple', 'white', 'silver', 'navy', 'teal', 'fuchsia']
+        let synth;
+        if (document.querySelector('#sound').checked) {
+            synth = window.speechSynthesis;
+        }
+
         function getRandomInt(max) {
             return Math.floor(Math.random() * max)
         }
@@ -126,6 +137,12 @@
             let randomColor = colors[getRandomInt(colors.length)];
             document.querySelector('main').style.backgroundColor = randomColor;
             document.querySelector('#injectText').innerHTML = randomColor;
+
+            //utter sound if flag is checked
+            if (document.querySelector('#sound').checked) {
+                let utterThis = new SpeechSynthesisUtterance(randomColor);
+                synth.speak(utterThis);
+            }
         }
     </script>
 </body>
