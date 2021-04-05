@@ -50,7 +50,6 @@
             background-color: #222;
             color: white;
             border-radius: 0.5rem;
-            margin-bottom: 2.5rem;
             padding: 1rem;
             letter-spacing: .25rem;
         }
@@ -66,7 +65,6 @@
             right: 0;
             margin: auto;
             height: 20px;
-            /*requires explicit height*/
         }
 
         button {
@@ -94,6 +92,15 @@
         a {
             color: inherit;
         }
+
+        #sound-container {
+            display: flex;
+            margin: auto;
+            width: 420px;
+            justify-content: flex-end;
+            padding: .25rem;
+            margin-bottom: 2rem;
+        }
     </style>
 </head>
 
@@ -114,7 +121,7 @@
             <div id="text-container">
                 <h1>Background Color: <span id="injectText">tomato</span></h1>
             </div>
-            <div>
+            <div id="sound-container">
                 <input type="checkbox" id="sound" name="sound" checked />
                 <label for="sound">Sound</label>
             </div>
