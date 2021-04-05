@@ -2,132 +2,157 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Flipper</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Flipper</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-evenly;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
+    nav {
+      display: flex;
+      justify-content: space-evenly;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
 
-        li {
-            list-style-type: none;
-            margin: 1rem;
-        }
+    li {
+      list-style-type: none;
+      margin: 1rem;
+    }
 
-        #color-flipper {
-            align-self: center;
-            color: #49A6E9;
-        }
+    #color-flipper {
+      align-self: center;
+      color: #49A6E9;
+    }
 
-        #links {
-            display: flex;
-            cursor: pointer;
-        }
-        li:hover {
-            color: #49A6E9;
-        }
+    #links {
+      display: flex;
+      cursor: pointer;
+    }
 
-        main {
-            position: relative;
-            height: calc(100vh - 50px);
-            background-color: tomato;
-        }
+    li:hover {
+      color: #49A6E9;
+    }
 
-        #text-container {
-            width: fit-content;
-            background-color: #222;
-            color: white;
-            border-radius: 0.5rem;
-            margin-bottom: 2.5rem;
-            padding: 1rem;
-            letter-spacing: .25rem;
-        }
+    main {
+      position: relative;
+      height: calc(100vh - 50px);
+      background-color: tomato;
+    }
 
-        section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-            top: 0;
-            bottom: 10rem;
-            left: 0;
-            right: 0;
-            margin: auto;
-            height: 20px;
-            /*requires explicit height*/
-        }
+    #text-container {
+      width: fit-content;
+      background-color: #222;
+      color: white;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      letter-spacing: .25rem;
+    }
 
-        button {
-            margin-top: 1rem;
-            padding: 0.75rem 1.25rem;
-            font-size: 1rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            cursor: pointer;
-            border-radius: 0.5rem;
-            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-            background: transparent;
-            transition: all 0.7s linear;
-        }
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      bottom: 10rem;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 20px;
+    }
 
-        button:hover {
-            background-color: #222;
-            color: white;
-        }
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+      background: transparent;
+      transition: all 0.7s linear;
+    }
 
-        #injectText {
-            color: #49A6E9;
-        }
-        a{
-            color: inherit;
-        }
-    </style>
+    button:hover {
+      background-color: #222;
+      color: white;
+    }
+
+    #injectText {
+      color: #49A6E9;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    #sound-container {
+      display: flex;
+      margin: auto;
+      width: 400px;
+      justify-content: flex-end;
+      padding: .25rem;
+      margin-bottom: 2rem;
+    }
+
+    #sound {
+      align-self: center;
+    }
+  </style>
 </head>
 
 <body>
-    <nav id="nav">
-        <h4 id="color-flipper">Color Flipper</h4>
-        <ul id="links">
-            <li>
-                <h4><a href="/index.html">Simple</a></h4>
-            </li>
-            <li>
-                <h4><a href="/hex.html">Hex</a></h4>
-            </li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <div id="text-container">
-                <h1>Background Color: <span id="injectText">tomato</span></h1>
-            </div>
-            <button onclick="changeBGColor()">Click Me</button>
-        </section>
-    </main>
+  <nav id="nav">
+    <h4 id="color-flipper">Color Flipper</h4>
+    <ul id="links">
+      <li>
+        <h4><a href="/index.html">Simple</a></h4>
+      </li>
+      <li>
+        <h4><a href="/hex.html">Hex</a></h4>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <section>
+      <div id="text-container">
+        <h1>Background Color: <span id="injectText">tomato</span></h1>
+      </div>
+      <div id="sound-container">
+        <input type="checkbox" id="sound" name="sound" />
+        <label for="sound">Sound</label>
+      </div>
+      <button onclick="changeBGColor()">Click Me</button>
+    </section>
+  </main>
 
-    <script>
-        const colors = ['green', 'red', 'yellow', 'blue', 'pink', 'orange', 'gray', 'purple', 'white', 'silver', 'navy', 'teal', 'fuchsia']
-        function getRandomInt(max) {
-            return Math.floor(Math.random() * max)
-        }
+  <script>
+    const colors = ['green', 'red', 'yellow', 'blue', 'pink', 'orange', 'gray', 'purple', 'white', 'silver', 'navy', 'teal', 'fuchsia']
+    let synth = window.speechSynthesis;
 
-        function changeBGColor() {
-            let randomColor = colors[getRandomInt(colors.length)];
-            document.querySelector('main').style.backgroundColor = randomColor;
-            document.querySelector('#injectText').innerHTML = randomColor;
-        }
-    </script>
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max)
+    }
+
+    function changeBGColor() {
+      let randomColor = colors[getRandomInt(colors.length)];
+      document.querySelector('main').style.backgroundColor = randomColor;
+      document.querySelector('#injectText').innerHTML = randomColor;
+
+      //utter sound if flag is checked
+      if (document.querySelector('#sound').checked) {
+        let utterThis = new SpeechSynthesisUtterance(randomColor);
+        synth.speak(utterThis);
+      }
+    }
+  </script>
 </body>
 
 </html>
