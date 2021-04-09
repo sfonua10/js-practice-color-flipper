@@ -118,6 +118,13 @@
       <li>
         <h4><a href="/hex.html">Hex</a></h4>
       </li>
+      <li>
+        <select name="languages" id="languages">
+          <option value="english">English</option>
+          <option value="spanish">Spanish</option>
+          <option value="tongan">Tongan</option>
+        </select>
+      </li>
     </ul>
   </nav>
   <main>
@@ -129,12 +136,51 @@
         <input type="checkbox" id="sound" name="sound" />
         <label for="sound">Sound</label>
       </div>
-      <button onclick="changeBGColor()">Click Me</button>
+      <button onclick="changeBGColor()">Change Color</button>
     </section>
   </main>
-
   <script>
-    const colors = ['green', 'red', 'yellow', 'blue', 'pink', 'orange', 'gray', 'purple', 'white', 'silver', 'navy', 'teal', 'fuchsia']
+    const colors = [
+      {
+        id: 0,
+        englishText: 'green',
+        spanishText: 'verde',
+        tonganText: 'lanumata'
+      },
+      {
+        id: 1,
+        englishText: 'red',
+        spanishText: 'rojo',
+        tonganText: 'kulokula'
+      },
+      {
+        id: 2,
+        englishText: 'white',
+        spanishText: 'blanco',
+        tonganText: 'hinehina'
+      },
+      {
+        id: 3,
+        englishText: 'yellow',
+        spanishText: 'amarillo',
+        tonganText: 'engeenga'
+      },
+      {
+        id: 4,
+        englishText: 'blue',
+        spanishText: 'azul',
+        tonganText: 'lanumoana'
+      },
+    ];
+    
+    let activeLanguage = 'englishText';
+    document.querySelector('select').addEventListener('change', e => {
+      if(e.target.value === 'tongan') {
+        activeLanguage = 'tonganText'
+      } else if(e.target.value === 'spanish') {
+        activeLanguage = 'spanishText'
+      }
+    });
     let synth = window.speechSynthesis;
 
     function getRandomInt(max) {
@@ -143,16 +189,18 @@
 
     function changeBGColor() {
       let randomColor = colors[getRandomInt(colors.length)];
-      document.querySelector('main').style.backgroundColor = randomColor;
-      document.querySelector('#injectText').innerHTML = randomColor;
+      console.log('randomColor', randomColor);
+      document.querySelector('main').style.backgroundColor = randomColor[activeLanguage];
+      document.querySelector('#injectText').innerHTML = randomColor[activeLanguage];
 
       //utter sound if flag is checked
       if (document.querySelector('#sound').checked) {
-        let utterThis = new SpeechSynthesisUtterance(randomColor);
+        let utterThis = new SpeechSynthesisUtterance(randomColor[activeLanguage]);
         synth.speak(utterThis);
       }
     }
   </script>
+
 </body>
 
 </html>
