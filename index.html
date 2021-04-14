@@ -189,8 +189,7 @@
 
     function changeBGColor() {
       let randomColor = colors[getRandomInt(colors.length)];
-      console.log('randomColor', randomColor);
-      document.querySelector('main').style.backgroundColor = randomColor[activeLanguage];
+      document.querySelector('main').style.backgroundColor = randomColor['englishText'];
       document.querySelector('#injectText').innerHTML = randomColor[activeLanguage];
 
       //utter sound if flag is checked
